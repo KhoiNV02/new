@@ -39,9 +39,10 @@ app.set('views', path.join(__dirname, 'Resouses','views'));
 io.on("connection",function(socket) {
  // console.log("có người kết nối"+socket.id);
   socket.on("client",function(data){
-    console.log(socket.id +": "+ data);
-  })
-})
+    io.emit("thongbao",data);
+  });
+
+});
 app.get('/',(req,res)=>{
   res.render('home');
 })
