@@ -10,6 +10,8 @@ const { engine } = require('express-handlebars');
 
 // import engine  from 'express-handlebars';
 const app = express();
+const cors = require('cors');
+app.use(cors());
 const server =require("http").Server(app);
 const io=require("socket.io")(server);
 // const handlebars = require('express-handlebars')
