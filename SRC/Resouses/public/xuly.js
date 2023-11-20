@@ -1,4 +1,4 @@
-var socket=io("http://localhost:3000");
+var socket=io("https://cainaymoi123.onrender.com");
 var btn=document.querySelector("#hello");
 var text=document.querySelector("#text");
 socket.on("thongbao",function(data)
