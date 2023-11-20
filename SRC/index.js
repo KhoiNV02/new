@@ -11,7 +11,12 @@ const { engine } = require('express-handlebars');
 // import engine  from 'express-handlebars';
 const app = express();
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  origin: 'https://cainaymoi123.onrender.com', // hoặc ['https://origin1.com', 'https://origin2.com']
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+}));
 const server =require("http").Server(app);
 const io=require("socket.io")(server);
 // const handlebars = require('express-handlebars')
